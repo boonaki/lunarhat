@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		overflow: hidden;
+	}
+	body {
+		backdrop-filter: blur(500px);
+		background: linear-gradient(135deg, #0a0520 0%, #251247 25%, #250f37 50%, #1b1921 75%, #141414 100%);
+		/* background: linear-gradient(135deg, #090418 0%, #1f0f45 25%, #250f37 50%, #251247 75%, #0a0520 100%); */
+	}
+		
+</style>

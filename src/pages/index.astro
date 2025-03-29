@@ -1,0 +1,113 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Welcome />
+	<div class="starfield-container" id="starField"></div>
+</Layout>
+
+<script is:inline>
+	document.addEventListener("DOMContentLoaded", () => {
+		buildStarfield();	
+	})
+
+	function buildStarfield() {
+		const starField = document.getElementById('starField');
+		const starCount = 200;
+	
+		if (!starField) {
+			console.error("container not found.");
+			return;
+		}
+		
+		// Subtle star colors
+		const starColors = [
+			'#fff',          // White
+			'#e6e6ff',       // Pale blue
+			'#ffece6',       // Pale orange/red
+			'#e6fff2',       // Pale green
+			'#fff6e6',       // Pale yellow
+			'#f2e6ff',       // Pale purple
+			'#ffe6f0'        // Pale pink
+		];
+		
+		// Create stars
+		for (let i = 0; i < starCount; i++) {
+			const star = document.createElement('div');
+			star.className = 'star';
+			
+			// Randomize star position
+			const x = Math.random() * 100;
+			const y = Math.random() * 100;
+			star.style.left = x + '%';
+			star.style.top = y + '%';
+			
+			// Randomize star size
+			const size = Math.random() * 2 + 1;
+			star.style.width = size + 'px';
+			star.style.height = size + 'px';
+			
+			// Assign random color from our palette
+			const colorIndex = Math.floor(Math.random() * starColors.length);
+			star.style.color = starColors[colorIndex];
+			star.style.backgroundColor = starColors[colorIndex];
+			
+			// Randomize star brightness
+			const brightness = Math.random() * 0.5 + 0.5;
+			// star.style.opacity = brightness.toString();
+			star.style.opacity = "0";
+			
+			// Randomize animation duration
+			const duration = Math.random() * 5 + 3;
+			star.style.animationDuration = duration + 's';
+			
+			// Randomize animation delay
+			const delay = Math.random() * duration;
+			star.style.animationDelay = delay + 's';
+			
+			starField.appendChild(star);
+		}
+	}
+</script>
+
+<style>
+	.starfield-container {
+		position: fixed;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		perspective: 500px;
+	}
+	
+	:global(.star) {
+		position: absolute;
+		width: 2px;
+		height: 2px;
+		border-radius: 50%;
+		animation: moveStar linear infinite;
+		box-shadow: 0 0 4px currentColor;
+	}
+	
+	@keyframes moveStar {
+		0% {
+			transform: translateZ(0) translateX(-50%) translateY(-50%);
+			opacity: 0;
+		}
+		10% {
+			opacity: 1;
+		}
+		90% {
+			opacity: 1;
+		}
+		100% {
+			transform: translateZ(1000px) translateX(-50%) translateY(-50%);
+			opacity: 0;
+		}
+	}
+</style>
