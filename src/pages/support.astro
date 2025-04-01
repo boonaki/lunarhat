@@ -1,20 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
 ---
 
+
 <Layout>
-	<div class="flex justify-center w-full">
-		<div class="w-full max-w-[1200px] flex justify-end p-4 text-white space-x-8 py-6 px-8 md:px-12 md:space-x-12">
-			<a href="/" class="hover:text-accent transition">About</a>
-			<a href="/support" class="hover:text-accent transition">Contact</a>
-		</div>
-	</div>
-	<Welcome />
-	<div class="starfield-container" id="starField"></div>
+	<div id="container" class="pb-48">
+        <div class="flex justify-center w-full">
+            <div class="p-6 max-w-[1200px] w-full">
+                <a href="/" class="flex items-center space-x-2 hover:text-accent transition outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                    <span>back to home</span>
+                </a>
+            </div>
+        </div>
+        <main id="hero" class="">
+            <section class="p-8 py-12 rounded-lg bg-black/15 backdrop-blur h-fit w-full max-w-[500px]">
+                <span class="font-extrabold text-5xl mb-1 flex">Contact Us</span>
+                <p>Have a question or need some help? Get in touch with us using our email below.</p>
+                <a href="mailto:hello@lunarhat.com" class="flex items-center outline-none text-white/35 hover:text-accent mt-4 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span class="ml-2 font-bold">hello@lunarhat.com</span>
+                </a>
+            </section>
+        </main>
+    </div>
+    <div class="starfield-container" id="starField"></div>
 </Layout>
 
 <script is:inline>
