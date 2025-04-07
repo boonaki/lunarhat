@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+	<div id="container" class="pb-48">
+        <div class="flex justify-center w-full">
+            <div class="p-6 max-w-[1200px] w-full">
+                <a href="/" class="flex items-center space-x-2 hover:text-accent transition outline-none font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                    <span>back to home</span>
+                </a>
+            </div>
+        </div>
+        <main id="hero" class="">
+            <div id='privacy' class='pt-4'>
+                <h2 class='font-bold text-4xl'><a href='/pomorings#privacy' class='hover:underline'>#</a> Privacy Policy</h2>
+                <span class='text-neutral-400'>for <strong>POMO Rings: Focus</strong></span>
+                <p class='text-sm text-neutral-500'>This policy is effective as of Friday, June 14 2024.</p>
+                <br />
+                <div class='font-mono'>
+                    <p>POMO Rings: Focus does not collect, store, or process any personal data from users. The only information stored by the application is the task data that users voluntarily enter within the app, and timer usage data. This data is stored locally on the user's device and is not transmitted or shared outside the device.</p>
+                    <br />
+                    <p>By using POMO Rings: Focus, you acknowledge that no data is collected or shared with any third parties.</p>
+                    <br/>
+                    <p>I take reasonable measures to protect the task data stored on the user's device. However, please be aware that no method of storage is 100% secure. While I strive to use commercially acceptable means to protect your data, I cannot guarantee its absolute security.</p>
+                    <br/>
+                    <p>I may update this privacy policy from time to time. If I make any changes, I will notify you by revising the effective date at the top of the policy. I encourage you to review the privacy policy whenever you access the application to stay informed about information practices used within POMO Rings: Focus.</p>
+                    <br/>
+                    <p>If you have any questions or concerns about this privacy policy, please contact me at <a class='underline' href='mailto:joshdurrett17@gmail.com'>hello@lunarhat.com</a>.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="starfield-container" id="starField"></div>
+</Layout>
